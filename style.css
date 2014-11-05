@@ -1,0 +1,63 @@
+/*
+Theme Name:  WSU Spine - CAHNRS Flex
+Theme URI:   http://cahnrs.wsu.edu/communications/
+Author:      CAHNRS Communications, Danial Bleile, Phil Cable
+Author URI:  http://cahnrs.wsu.edu/communications/
+Description: 
+Version:     0.1
+License:     Copyright Washington State University
+License      URI: http://copyright.wsu.edu
+Template:    WSUWP-spine-parent-theme
+*/
+.main-header {
+	height: auto;
+}
+#global-header:before,
+#global-header:after {
+	content: " ";
+	width: 100%;
+	background: #5e6a71;
+	left: -100%;
+	position: absolute;
+	height: 100%;
+}
+#global-header:after { left: auto; right: -100%; }
+#site-heading {
+	margin: 0 2rem;
+}
+#site-heading > a {
+	display: block;
+	padding: 2.5rem 0;
+}
+#site-title {
+	font-size: 2.2rem;
+	display: block;
+}
+#site-description {
+	padding-top: 0.75rem;
+	font-size: 1.1rem;
+	display: block;
+}
+#post-featured-image {
+	height: 350px;
+	overflow: hidden;
+}
+#post-image-wrapper {
+	position: absolute;
+	height: 350px;
+	width: 100%;
+	overflow: hidden;
+	left: 0;
+	background-position: center center;
+	background-size: cover;
+}
+#post-featured-image img{
+	width: 100%;
+	height: auto;
+}
+main > section {
+	margin: 0 2rem;
+}
+main > section > article{
+	padding: 1.25rem 0 3rem;
+}
