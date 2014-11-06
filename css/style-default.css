@@ -1,0 +1,48 @@
+#global-header.main-header {
+	height: auto ;
+}
+
+#global-header:before,
+#global-header:after {
+	background: #5e6a71;
+}
+
+#site-heading {
+	margin: 0 2rem;
+}
+#site-heading > a {
+	display: block;
+	padding: 1.5rem 0 1.5rem;
+}
+#site-title {
+	font-size: 2.2rem;
+	display: block;
+}
+#site-description {
+	padding-top: 0.75rem;
+	font-size: 1.1rem;
+	display: block;
+}
+#global-header > nav {
+	margin: 0 1rem;
+}
+#global-header > nav a {
+	padding: 0.5rem 1rem;
+}
+#post-featured-image {
+	height: 350px;
+	overflow: hidden;
+}
+#post-image-wrapper {
+	position: absolute;
+	height: 350px;
+	width: 100%;
+	overflow: hidden;
+	left: 0;
+	background-position: center center;
+	background-size: cover;
+}
+#post-featured-image img{
+	width: 100%;
+	height: auto;
+}
