@@ -17,6 +17,7 @@ Template:    WSUWP-spine-parent-theme
 	left: -100%;
 	position: absolute;
 	height: 100%;
+	top: 0;
 }
 #global-header:after { left: auto; right: -100%; }
 
@@ -31,6 +32,28 @@ Template:    WSUWP-spine-parent-theme
 }
 #global-header > nav > ul > li a {
 	display: block;
+}
+#global-header .is_dropdown li {
+	position: relative;
+}
+
+#global-header .is_dropdown ul {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	display: none;
+}
+
+#global-header .is_dropdown li li {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+#global-header .is_dropdown li li a {
+	display: block;
+	margin: 0;
 }
 
 main > section {
