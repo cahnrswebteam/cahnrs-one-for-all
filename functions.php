@@ -37,12 +37,13 @@ class init_cahnrs_flex {
 	}
 	
 	public function add_image_sizes(){
-		 add_image_size( '4x3-medium', 400, 300, true );
-		 add_image_size( '3x4-medium', 300, 400, true );
-		 add_image_size( '16x9-medium', 400, 225, true );
-		 add_image_size( '16x9-large', 800, 450, true );
-		 add_image_size( '16x9-extra-large', 800, 450, true );
-		 add_image_size( 'extra-large' );
+		set_post_thumbnail_size( 300, 300, true );
+		add_image_size( '4x3-medium', 400, 300, true );
+		add_image_size( '3x4-medium', 300, 400, true );
+		add_image_size( '16x9-medium', 400, 225, true );
+		add_image_size( '16x9-large', 800, 450, true );
+		add_image_size( '16x9-extra-large', 800, 450, true );
+		add_image_size( 'extra-large' );
 	}
 	
 	public function add_image_size_names( $sizes ) {

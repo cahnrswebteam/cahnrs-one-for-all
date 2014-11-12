@@ -272,6 +272,9 @@ main > section > article > header {
 	font-size: 0.8rem;
 	display: block;
 }
+.cahnrs-person-caption h3 {
+	font-size: 1.2rem;
+}
 
 @media only screen and (min-width: 1386px) {
 	.cahnrs-full-slider ul.slide-caption > li {
@@ -328,6 +331,7 @@ main > section > article > header {
 		padding-top: 2rem;
 	}
 }
+
 
 @media only screen and (max-width: 693px){ 
 	main > section {
@@ -420,4 +424,27 @@ main > section > article > header {
 		letter-spacing: 1px;
 	}
 }
+@media only screen and (min-height: 320px){
+	#global-header.has-banner {
+		margin-bottom: 240px;
+	}
+}
+
+@media only screen and (min-height: 450px){
+	#global-header.has-banner {
+		margin-bottom: 350px;
+	}
+}
+@media only screen and (min-height: 550px){
+	#global-header.has-banner {
+		margin-bottom: 450px;
+	}
+}
+@media only screen and (min-height: 600px){
+	#global-header.has-banner {
+		margin-bottom: 500px;
+	}
+}
+
+
 
