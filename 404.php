@@ -1,0 +1,1 @@
+<?php wp_redirect( 'http://sdc.wsu.edu?status=404' ); exit;?>
