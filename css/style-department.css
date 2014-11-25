@@ -1,42 +1,140 @@
-#global-header.main-header {
-	height: auto ;
-	background-color: transparent;
-}
+@import url("spineless.css");
 
-#global-header:before,
-#global-header:after {
-	background: none;
+#global-header {
+	height: auto;
+	min-height: 142px;
+	width: 100%;
+}
+#global-header.colors-gray,
+#global-header.colors-gray:before,
+#global-header.colors-gray:after {
+	background-color: #5e6a71;
+}
+#global-header.colors-green,
+#global-header.colors-green:before,
+#global-header.colors-green:after {
+	background: #8f7e35;
+}
+#global-header.colors-orange,
+#global-header.colors-orange:before,
+#global-header.colors-orange:after {
+	background: #b67233;
+}
+#global-header.colors-blue,
+#global-header.colors-blue:before,
+#global-header.colors-blue:after {
+	background: #4f868e;
+}
+#global-header.colors-yellow,
+#global-header.colors-yellow:before,
+#global-header.colors-yellow:after {
+	background: #c69214;
+}
+.home.has-featured-image #global-header {
+	background-color: transparent;
+	min-height: 500px;
+	/*position: absolute;*/
+	width: 100%;
+	z-index: 1;
+}
+.home.has-featured-image #global-header:before,
+.home.has-featured-image #global-header:after {
+	content: normal;
+	height: 0;
+	left: 0;
+	right: 0;
+	width: 0;
+}
+.home.has-featured-image .size-lt-large #global-header {
+	min-height: 450px;
+}
+.single #global-header {
+	min-height: 0;
 }
 
 #site-heading {
-	margin: 0 2rem;
+	padding: 1rem 2rem;
 }
-#site-heading > a {
-	display: block;
-	padding: 1.5rem 0 1.5rem;
+.spineless.size-gt-medium #site-heading {
+	margin-left: 198px;
+}
+#site-heading span {
+	color: #fff;
+	display: inline-block;
+	font-family: 'Open Sans', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-size: 0.75rem;
+	letter-spacing: 2px;
+	line-height: 1rem;
+	text-transform: uppercase;
+}
+#network-title {
+	font-weight: bold;
 }
 #site-title {
-	font-size: 2.2rem;
+	border-left: 1px solid #fff;
+	margin-left: 0.75rem;
+	padding-left: 1rem;
+}
+#page-title {
+	bottom: -8px;
+	color: #fff;
 	display: block;
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 1em;
+	margin: 0;
+	padding: 0 0 0 2rem;
+	position: absolute;
+	text-transform: uppercase;
 }
-#site-description {
-	padding-top: 0.75rem;
-	font-size: 1.1rem;
-	display: block;
+.size-lt-large #binder:not(.fluid) #page-title,
+.spineless #binder:not(.fluid) #page-title {
+	padding: 0;
 }
-#global-header > nav {
-	margin: 0 1rem;
+
+
+#global-header nav {
+	margin: 0 0 0 198px;
+	padding: 0 1rem;
+	position: absolute;
+	top: 152px;
 }
-#global-header > nav a {
-	padding: 0.5rem 1rem;
+.size-lt-large #global-header nav {
+	/* I'd rather get rid of the markup if possible */
+	display: none;
 }
+#global-header nav ul,
+#global-header nav ul li {
+	line-height: 1em;
+}
+#global-header nav a {
+	font-weight: bold;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	text-transform: uppercase; 
+	-webkit-transition: background-color .2s linear, color .2s linear;
+	-moz-transition:    background-color .2s linear, color .2s linear;
+	-o-transition:      background-color .2s linear, color .2s linear;
+	transition:         background-color .2s linear, color .2s linear;
+}
+#global-header nav a:hover {
+	background-color: rgba( 255, 255, 255, 0.5 );
+	color: #383d42;
+}
+
+
 #post-featured-image {
-	height: 350px;
+	display: none;
+	/*height: 500px;*/
 	overflow: hidden;
 }
+.home.has-featured-image #post-featured-image {
+	display: block;
+}
+
 #post-image-wrapper {
 	position: fixed;
-	height: 100%;
+	height: 500px;
 	width: 100%;
 	overflow: hidden;
 	left: 0;
@@ -44,7 +142,57 @@
 	background-position: center center;
 	background-size: cover;
 }
-#post-featured-image img{
+.size-gt-medium #post-image-wrapper.toolbar {
+	top: 32px;
+}
+#post-featured-image img {
 	width: 100%;
 	height: auto;
+}
+
+
+main > section {
+	background: #fff;
+	margin: 0 !important;
+}
+.page .article-header {
+	display: none;
+}
+.single .article-header {
+	margin: 1.5rem 2rem 0;
+}
+.single .article-header h1.article-title {
+	padding-bottom: 0;
+}
+main > section > article {
+	overflow: auto;
+	padding: 0 !important;
+}
+.pagebuilder-column {
+	overflow: auto; /* Contain children margins */
+}
+.pagebuilder-item {
+	margin: 1.5rem 2rem;
+}
+.spine-vellum .size-gt-medium #spine:not(.crimson) #glue:before {
+	opacity: 0.9;
+}
+.archive article,
+.archive aside {
+	padding: 1.5rem 2rem 0;
+}
+h2.article-title {
+	padding-top: 0;
+}
+
+@media screen and (max-width:791px) {
+	.size-lt-large #binder:not(.fluid) #page-title {
+		padding: 0 0 0 2rem;
+	}
+}
+
+@media only screen and (max-width: 693px) {
+	.size-lt-large #binder:not(.fluid) #page-title {
+		padding: 0 0 0 1rem;
+	}
 }

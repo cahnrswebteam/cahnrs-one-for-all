@@ -1,0 +1,79 @@
+@media only screen and (min-width:1188px) and (min-device-width:990px) {
+	.spineless #binder:not(.fluid).max-1188,
+	.spineless #binder:not(.fluid).max-1386,
+	.spineless #binder:not(.fluid).max-1584,
+	.spineless #binder:not(.fluid).max-1782,
+	.spineless #binder:not(.fluid).max-1980,
+	.spineless #binder:not(.fluid).max-1188 main,
+	.spineless #binder:not(.fluid).max-1386 main,
+	.spineless #binder:not(.fluid).max-1584 main,
+	.spineless #binder:not(.fluid).max-1782 main,
+	.spineless #binder:not(.fluid).max-1980 main {
+		width: 1188px;
+	}
+	.spineless #binder:not(.fluid).max-1188 .row,
+	.spineless #binder:not(.fluid).max-1386 .row,
+	.spineless #binder:not(.fluid).max-1584 .row,
+	.spineless #binder:not(.fluid).max-1782 .row,
+	.spineless #binder:not(.fluid).max-1980 .row {
+		max-width: 1188px;
+	}
+}
+
+@media only screen and (min-width:1386px) {
+	.spineless #binder:not(.fluid).max-1386,
+	.spineless #binder:not(.fluid).max-1584,
+	.spineless #binder:not(.fluid).max-1782,
+	.spineless #binder:not(.fluid).max-1980,
+	.spineless #binder:not(.fluid).max-1386 main,
+	.spineless #binder:not(.fluid).max-1584 main,
+	.spineless #binder:not(.fluid).max-1782 main,
+	.spineless #binder:not(.fluid).max-1980 main {
+		width: 1386px;
+	}
+	.spineless #binder:not(.fluid).max-1386 .row,
+	.spineless #binder:not(.fluid).max-1584 .row,
+	.spineless #binder:not(.fluid).max-1782 .row,
+	.spineless #binder:not(.fluid).max-1980 .row {
+		max-width: 1386px;
+	}
+}
+
+@media only screen and (min-width:1584px) {
+	.spineless #binder:not(.fluid).max-1584,
+	.spineless #binder:not(.fluid).max-1782,
+	.spineless #binder:not(.fluid).max-1980,
+	.spineless #binder:not(.fluid).max-1584 main,
+	.spineless #binder:not(.fluid).max-1782 main,
+	.spineless #binder:not(.fluid).max-1980 main {
+		width: 1584px;
+	}
+	.spineless #binder:not(.fluid).max-1584 .row,
+	.spineless #binder:not(.fluid).max-1782 .row,
+	.spineless #binder:not(.fluid).max-1980 .row {
+		max-width: 1584px;
+	}
+}
+
+@media only screen and (min-width:1782px) {
+	.spineless #binder:not(.fluid).max-1782,
+	.spineless #binder:not(.fluid).max-1980,
+	.spineless #binder:not(.fluid).max-1782 main,
+	.spineless #binder:not(.fluid).max-1980 main {
+		width: 1782px;
+	}
+	.spineless #binder:not(.fluid).max-1782 .row,
+	.spineless #binder:not(.fluid).max-1980 .row {
+		max-width: 1782px;
+	}
+}
+	
+@media only screen and (min-width:1980px) {
+	.spineless #binder:not(.fluid).max-1980,
+	.spineless #binder:not(.fluid).max-1980 main {
+		width: 1980px;
+	}
+	.spineless #binder:not(.fluid).max-1980 .row {
+		max-width: 1980px;
+	}
+}

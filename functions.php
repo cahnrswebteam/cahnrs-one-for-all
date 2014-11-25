@@ -15,11 +15,12 @@ class init_cahnrs_flex {
 		\add_action( 'init', array( $this, 'add_site_taxonomy' ), 0 );
 		\add_filter( 'image_size_names_choose', array( $this, 'add_image_size_names' ) );
 		\add_action( 'admin_init' , array( $this , 'admin_init' ) );
+		add_filter( 'body_class', array( $this, 'spine_theme_images_classes' ) );
 	}
 	
 	public function add_scripts(){
 		\wp_enqueue_style( 
-			'cahnrs-flex-'.$this->theme_model->t_css ,  
+			'cahnrs-flex-'.$this->theme_model->t_css,  
 			get_stylesheet_directory_uri().'/css/style-'.$this->theme_model->t_css.'.css', 
 			array(), 
 			'0.0.1' 
@@ -33,7 +34,9 @@ class init_cahnrs_flex {
 	}
 	
 	public function add_menu_locations() {
-		register_nav_menu( 'cahnrs_horizontal', 'Horizontal' );
+		if ( 'department' != get_theme_mod( 'cahnrs_flex_subtheme' ) ) {
+			register_nav_menu( 'cahnrs_horizontal', 'Horizontal' );
+		}
 	}
 	
 	public function add_image_sizes(){
@@ -108,6 +111,16 @@ class init_cahnrs_flex {
 		wp_reset_postdata();
 		return $posts;
 	}
+
+	/**
+	 * From Spine 0.16.0 - add classes indicated which theme images are available.
+	 */
+	public function spine_theme_images_classes( $classes ) {
+		if ( has_post_thumbnail() && is_singular() ) { $classes[] = 'has-featured-image'; }
+		if ( 'department' == get_theme_mod( 'cahnrs_flex_subtheme' ) && is_front_page() ) { $classes[] = 'spine-vellum'; }
+		return $classes;
+	}
+
 }
 
 class cf_theme_model {
@@ -125,14 +138,14 @@ class cf_theme_model {
 		$opts = get_theme_mod( 'cahnrs_flex_subtheme' , $opts_default  ); // Get the options from theme
 		switch( $opts ){
 			case 'sdc':
-				$opts = array( 'header' => 'sdc', 'footer' => false , 'css' => 'sdc' );
+				$opts = array( 'header' => 'sdc', 'footer' => false, 'css' => 'sdc' );
 				break;
 			case 'department':
-				$opts = array( 'header' => 'default', 'footer' => false , 'css' => 'department' );
+				$opts = array( 'header' => 'department', 'footer' => false, 'css' => 'department' );
 				break;
 			case 'default':
 			default:
-				$opts = array( 'header' => 'default','footer' => false , 'css' => 'default' );
+				$opts = array( 'header' => 'default', 'footer' => false, 'css' => 'default' );
 		}
 		$this->t_header = $opts['header'];
 		$this->t_footer = $opts['footer'];
