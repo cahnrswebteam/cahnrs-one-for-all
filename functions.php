@@ -8,7 +8,7 @@ class init_cahnrs_flex {
 		$this->theme_model = new cf_theme_model();
 		$this->theme_controller = new cf_theme_controller( $this->theme_model );
 		$this->theme_view = new cf_theme_view(  $this->theme_controller , $this->theme_model );
-		\add_action( 'wp_enqueue_scripts', array( $this , 'add_scripts' ) );
+		\add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
 		\add_action( 'customize_register', array( $this->theme_view, 'add_custom_settings' ) );
 		\add_action( 'init', array( $this, 'add_menu_locations' ) );
 		\add_action( 'init', array( $this, 'add_image_sizes' ) );
@@ -22,7 +22,7 @@ class init_cahnrs_flex {
 		\wp_enqueue_style( 
 			'cahnrs-flex-'.$this->theme_model->t_css,  
 			get_stylesheet_directory_uri().'/css/style-'.$this->theme_model->t_css.'.css', 
-			array(), 
+			array( 'wsu-spine' ), 
 			'0.0.1' 
 			);
 		\wp_enqueue_script( 
