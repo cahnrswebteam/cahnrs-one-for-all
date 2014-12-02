@@ -1,0 +1,236 @@
+/**
+ * Header
+ * -----------------------
+ */
+#global-header {
+	min-height: 142px;
+}
+.has-featured-image #global-header {
+	background-color: transparent;
+	min-height: 500px;
+	width: 100%;
+	z-index: 1;
+}
+.has-featured-image #global-header:before,
+.has-featured-image #global-header:after {
+	content: normal;
+	height: 0;
+	left: 0;
+	right: 0;
+	width: 0;
+}
+.has-featured-image .size-lt-large #global-header {
+	min-height: 450px;
+}
+#page-title {
+	bottom: -13px;
+	color: #fff;
+	font-family: sans-serif; /* Because vertical metrics differences between OSs with Open Sans and Lucida */
+	font-size: 60px;
+	font-weight: normal;
+	margin: 0 0 0 2rem;
+	padding: 0;
+	position: absolute;
+	text-transform: uppercase;
+}
+.size-lt-large #binder:not(.fluid) #page-title,
+.spineless #binder:not(.fluid) #page-title {
+	margin: 0;
+}
+
+/**
+ * Featured image
+ * -----------------------
+ */
+.has-featured-image #post-featured-image {
+	display: block;
+	overflow: hidden;
+}
+#post-image-wrapper {
+	position: fixed;
+	height: 600px;
+	width: 100%;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	background-position: center center;
+	background-size: cover;
+}
+.size-gt-medium #post-image-wrapper.toolbar {
+	top: 32px;
+}
+#post-featured-image img {
+	width: 100%;
+	height: auto;
+}
+
+/**
+ * Section handling
+ * -----------------------
+ */
+.has-featured-image .row:after,
+.has-featured-image .row:before {
+	background-color: #f9f9f9;
+	content: '';
+	height: 100%;
+	position: absolute;
+	top: 0;
+	visibility: visible;
+	width: 1000%;
+	z-index: 1;
+}
+.has-featured-image .row:before {
+	left: -1000%;
+}
+.has-featured-image .row:after {
+	right: -1000%;
+}
+
+/**
+ * Spineless handling
+ * -----------------------
+ */
+.spineless.size-gt-medium #site-heading {
+	margin-left: 198px;
+}
+#global-header nav {
+	padding: 0 1rem;
+	position: absolute;
+	top: 152px;
+}
+.spineless #global-header nav {
+	margin: 0 0 0 198px;
+}
+.size-lt-large #global-header nav {
+	display: none;
+}
+#global-header nav ul,
+#global-header nav ul li {
+	line-height: 1em;
+}
+#global-header nav a {
+	font-weight: bold;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	text-transform: uppercase; 
+	-webkit-transition: background-color .2s linear, color .2s linear;
+	-moz-transition:    background-color .2s linear, color .2s linear;
+	-o-transition:      background-color .2s linear, color .2s linear;
+	transition:         background-color .2s linear, color .2s linear;
+}
+#global-header nav a:hover {
+	background-color: rgba( 255, 255, 255, 0.5 );
+	color: #383d42;
+}
+
+/**
+ * Content headings
+ * -----------------------
+ */
+h2.article-title {
+	padding-top: 0;
+}
+article h2 {
+	font-family: 'Open Sans Condensed', 'Open Sans', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-size: 1.4rem;
+	font-weight: normal;
+	padding: 0;
+	text-transform: uppercase;
+}
+h3 {
+	font-size: 1.3rem;
+}
+
+/**
+ * Miscellaneous overrides
+ * -----------------------
+ */
+main > section {
+	min-height: 500px;
+}
+main > section > article {
+	padding: 0 !important;
+}
+.pagebuilder-item {
+	margin: 1.5rem 2rem;
+}
+.archive article,
+.archive aside {
+	padding: 1.5rem 2rem 0;
+}
+.pagbuilder-layout-thirds .pagebuilder-column-2 .item-inner-wrapper {
+	background-color: #f9f9f9;
+}
+.item-inner-wrapper .cahnrs-promo-view .cc-image-wrapper {
+	width: 100px;
+}
+.item-inner-wrapper .cahnrs-promo-view.has_image .cc-content-wrapper {
+	margin-left: 115px;
+}
+.article-header {
+	display: none;
+}
+.has-featured-image .size-gt-medium #spine:not(.crimson) #glue:before {
+	opacity: 0.9;
+}
+
+/**
+ * Media Queries
+ * -----------------------
+ */
+@media screen and (max-width:791px) {
+	.size-lt-large #binder:not(.fluid) #page-title {
+		padding: 0 0 0 2rem;
+	}
+}
+@media only screen and (min-width: 693px) {
+	#network-title > a,
+	#network-title span {
+		-webkit-transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+		-moz-transition:    opacity 1s ease-in-out, visibility 1s ease-in-out;
+		-o-transition:      opacity 1s ease-in-out, visibility 1s ease-in-out;
+		transition:         opacity 1s ease-in-out, visibility 1s ease-in-out;
+	}
+	#network-title span {
+		display: block;
+		opacity: 0;
+		position: absolute;
+		visibility: hidden;
+		white-space: nowrap;
+	}
+	#network-title span a {
+		display: block;
+		padding-top: 10px;
+	}
+	#network-title:hover span {
+		opacity: 1;
+		visibility: visible;
+	}
+	#network-title:hover > a {
+		opacity: 0.1;
+	}
+	/* Pagebuilder overrides */
+	.pagbuilder-layout-aside .pagebuilder-column-1 .pagebuilder-item,
+	.pagbuilder-layout-third-right .pagebuilder-column-1 .pagebuilder-item,
+	.pagbuilder-layout-third-left .pagebuilder-column-2 .pagebuilder-item,
+	.pagbuilder-layout-half .pagebuilder-column-1 .pagebuilder-item,
+	.pagbuilder-layout-thirds div:not(.pagebuilder-column-3) .pagebuilder-item,
+	.pagbuilder-layout-fourths div:not(.pagebuilder-column-4) .pagebuilder-item,
+	.pagbuilder-layout-half .pagebuilder-column-2 .pagebuilder-item,
+	.pagbuilder-layout-thirds div:not(.pagebuilder-column-1) .pagebuilder-item,
+	.pagbuilder-layout-fourths div:not(.pagebuilder-column-1) .pagebuilder-item,
+	.pagebuilder-item:not(.widget_page_title) { 
+		margin: 1px;
+	}
+	.widget_page_content .item-inner-wrapper,
+	.widget_content_block .item-inner-wrapper,
+	.widget_CAHNRS_feed_widget .item-inner-wrapper,
+	.widget_Ai1ec_View_Admin_Widget .item-inner-wrapper {
+		padding: 1.5rem 2rem;
+	}
+}
+@media only screen and (max-width: 693px) {
+	.size-lt-large #binder:not(.fluid) #page-title {
+		padding: 0 0 0 1rem;
+	}
+}

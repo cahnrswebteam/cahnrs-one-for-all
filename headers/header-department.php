@@ -18,8 +18,6 @@
 	</nav>
 	<?php endif; ?>
   <?php if ( is_front_page() ) : ?>
-	<div id="page-title">
-		<h1><?php the_title(); ?></h1>
-	</div>
+	<h1 id="page-title"><?php the_title(); ?></h1>
   <?php endif; ?>
 </header>

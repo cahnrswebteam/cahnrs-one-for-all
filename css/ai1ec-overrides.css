@@ -1,0 +1,102 @@
+/**
+ * Overrides for All-in-one Event Calendar, could definitely use more work
+ */
+.timely,
+.ai1ec-popup-title,
+.ai1ec-popover.ai1ec-popup .ai1ec-event-time,
+.ai1ec-popup-excerpt {
+	font: 14px/22px "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	line-height: 1;
+}
+.timely a {
+	color: #981e32;
+}
+.timely a:hover,
+.timely a:focus {
+	color: #c60c30;
+}
+.ai1ec-agenda-widget-view .ai1ec-date,
+.ai1ec-agenda-widget-view .ai1ec-date.ai1ec-today {
+	background: none;
+	border-top: none;
+}
+.ai1ec-agenda-widget-view .ai1ec-date-title {
+	background: #f9f9f9;
+	border: none;
+	border-radius: 0;
+	color: #2a3033;
+	margin: 1rem 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.ai1ec-agenda-widget-view .ai1ec-date-title:hover {
+	color: #000 !important;
+}
+.ai1ec-agenda-widget-view .ai1ec-month {
+	background: #981e32;
+	border-radius: 0;
+}
+.ai1ec-agenda-widget-view .ai1ec-date-events {
+	margin: 0;
+}
+.ai1ec-agenda-widget-view .ai1ec-event {
+	margin: 1rem 0 1rem 4rem;
+}
+.ai1ec-agenda-widget-view .ai1ec-event > a {
+	color: #981e32;
+	border-color: #d7dadb;
+	border-radius: 0;
+	padding: 0.5em 0.5em;
+}
+.ai1ec-agenda-widget-view .ai1ec-event > a:hover {
+	color: #c60c30;
+	border-color: #b5babe;
+}
+.ai1ec-popover {
+	border-radius: 0;
+}
+.ai1ec-popover.ai1ec-popup {
+	border-color: #b5babe;
+	width: 200px;
+}
+.ai1ec-popover.ai1ec-left .ai1ec-arrow {
+	border-left-color: #b5babe; 
+}
+.ai1ec-popover.ai1ec-popup .ai1ec-popover-content {
+	color: #5e6a71;
+	padding: 1em;
+}
+.ai1ec-popover.ai1ec-popup .ai1ec-event-time {
+	background: none;
+	font-weight: bold;
+}
+.timely .ai1ec-btn-default {
+	background: #eff0f1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d7dadb #8d959a #8d959a #d7dadb;
+	border-radius: 0;
+	color: #464e54;
+	font-size: 14px;
+}
+.timely .ai1ec-btn-default.ai1ec-calendar-link {
+	background: none;
+	border: none;
+	color: #981e32;
+	padding-right: 0;
+}
+.timely .ai1ec-btn-default.ai1ec-calendar-link:hover,
+.timely .ai1ec-btn-default.ai1ec-calendar-link:focus,
+.timely .ai1ec-btn-default.ai1ec-calendar-link:active {
+	background: none;
+	color: #c60c30;
+	-webkit-box-shadow: none;
+	box-shadow:         none;
+}
+.ai1ec-fa-arrow-right::before {
+	content: '»';
+}
+.ai1ec-tooltip-inner,
+.ai1ec-dropdown-menu {
+	border-radius: 0;
+}
