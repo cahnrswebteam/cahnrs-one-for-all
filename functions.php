@@ -3,7 +3,7 @@ class init_cahnrs_flex {
 	public $theme_model;
 	public $theme_controller;
 	public $theme_view;
-	
+
 	public function __construct() {
 		$this->theme_model = new cf_theme_model();
 		$this->theme_controller = new cf_theme_controller( $this->theme_model );
@@ -14,21 +14,21 @@ class init_cahnrs_flex {
 		\add_action( 'init', array( $this, 'add_image_sizes' ) );
 		\add_action( 'init', array( $this, 'add_site_taxonomy' ), 0 );
 		\add_filter( 'image_size_names_choose', array( $this, 'add_image_size_names' ) );
-		\add_action( 'admin_init' , array( $this, 'admin_init' ) );
+		\add_action( 'admin_init', array( $this, 'admin_init' ) );
 		\add_filter( 'body_class', array( $this, 'spine_theme_images_classes' ) );
 	}
-	
-	public function add_scripts(){
-		\wp_enqueue_style( 
-			'cahnrs-flex-'.$this->theme_model->t_css,  
-			get_stylesheet_directory_uri().'/css/style-'.$this->theme_model->t_css.'.css', 
-			array( 'wsu-spine' ), 
-			'0.0.1' 
+
+	public function add_scripts() {
+		\wp_enqueue_style(
+			'cahnrs-flex-'.$this->theme_model->t_css,
+			get_stylesheet_directory_uri().'/css/style-'.$this->theme_model->t_css.'.css',
+			array( 'wsu-spine' ),
+			'0.0.1'
 			);
-		\wp_enqueue_script( 
+		\wp_enqueue_script(
 			'cahnrs-flex-js',
 			get_stylesheet_directory_uri().'/js/flex.js',
-			array(), 
+			array(),
 			'0.0.1'
 			);
 		if ( 'department' == $this->theme_model->t_css ) {
@@ -53,7 +53,7 @@ class init_cahnrs_flex {
 				'ai1ec-overrides',
 				get_stylesheet_directory_uri().'/css/ai1ec-overrides.css'
 			);
-		} 
+		}
 		if ( in_array( 'the-events-calendar/the-events-calendar.php', $active_plugins ) ) {
 			wp_enqueue_style(
 				'tec-overrides',
@@ -61,14 +61,14 @@ class init_cahnrs_flex {
 			);
 		}
 	}
-	
+
 	public function add_menu_locations() {
 		if ( 'department' != $this->theme_model->t_css ) {
 			register_nav_menu( 'cahnrs_horizontal', 'Horizontal' );
 		}
 	}
-	
-	public function add_image_sizes(){
+
+	public function add_image_sizes() {
 		set_post_thumbnail_size( 300, 300, true );
 		add_image_size( '4x3-medium', 400, 300, true );
 		add_image_size( '3x4-medium', 300, 400, true );
@@ -77,7 +77,7 @@ class init_cahnrs_flex {
 		add_image_size( '16x9-extra-large', 800, 450, true );
 		add_image_size( 'extra-large' );
 	}
-	
+
 	public function add_image_size_names( $sizes ) {
 		return array_merge( $sizes, array(
 			'4x3-medium'       => __( '4x3 Medium' ),
@@ -88,14 +88,14 @@ class init_cahnrs_flex {
 			'extra-large'      => __( 'Extra Large' ),
 		) );
 	}
-	
-	public function admin_init(){
+
+	public function admin_init() {
 		/** Register default taxonomies for pages **/
 		\register_taxonomy_for_object_type( 'post_tag', 'page' );
-		\register_taxonomy_for_object_type( 'category', 'page' ); 
+		\register_taxonomy_for_object_type( 'category', 'page' );
 	}
-	
-	public function add_site_taxonomy(){
+
+	public function add_site_taxonomy() {
 		$labels = array(
 			'name'              => _x( 'Sites', 'taxonomy general name' ),
 			'singular_name'     => _x( 'Site', 'taxonomy singular name' ),
@@ -109,7 +109,7 @@ class init_cahnrs_flex {
 			'new_item_name'     => __( 'New Site Name' ),
 			'menu_name'         => __( 'Sites' ),
 		);
-	
+
 		$args = array(
 			'hierarchical'      => true,
 			'labels'            => $labels,
@@ -121,13 +121,13 @@ class init_cahnrs_flex {
 		);
 		register_taxonomy( 'site', array( 'page' ), $args );
 	}
-	
+
 	public function check_post_thumbnail() {
 		if ( !$this->theme_model->show_home_banner && is_front_page() ) return false;
 		if ( $this->theme_model->show_banner && has_post_thumbnail() ) return true;
 		return false;
 	}
-	
+
 	public function get_query( $args = array(), $size = 'full' ) {
 		$posts = array();
 		$the_query = new WP_Query( $args );
@@ -136,7 +136,7 @@ class init_cahnrs_flex {
 				$the_query->the_post();
 				$posts[] = $the_query->post;
 			}
-		} 
+		}
 		wp_reset_postdata();
 		return $posts;
 	}
@@ -162,9 +162,9 @@ class cf_theme_model {
 	public $menu;
 	public $orderd_nav;
 	public $tertiary_nav;
-	
+
 	public function __construct() {
-		$opts_default = 'default'; // Default options 
+		$opts_default = 'default'; // Default options
 		$opts = get_theme_mod( 'cahnrs_flex_subtheme', $opts_default ); // Get the options from theme
 		switch ( $opts ) {
 			case 'sdc':
@@ -183,28 +183,28 @@ class cf_theme_model {
 		$this->show_banner = get_theme_mod( 'cahnrs_flex_featured', false ); // Get the options from theme
 		$this->show_home_banner = get_theme_mod( 'cahnrs_flex_ex_feature', false ); // Get the options from theme
 	}
-	
+
 	public function set_tertiary_nav( $post_id ) {
-		
+
 		$nav = array();
 		if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'site' ] ) ) {
 			$menu = wp_get_nav_menu_object( $locations[ 'site' ] ); // GET THE MENU OBJECT FROM LOCATION
 			$menu_items = wp_get_nav_menu_items( $menu->term_id ); // GET MENU ITEMS FROM OBJECT ID
 			$current = false;
-			foreach( $menu_items as $menu_item ) {
-				if( $post_id == $menu_item->object_id ) $current = $menu_item;
-				$this->menu[$menu_item->ID] = $menu_item;  
+			foreach ( $menu_items as $menu_item ) {
+				if ( $post_id == $menu_item->object_id ) $current = $menu_item;
+				$this->menu[$menu_item->ID] = $menu_item;
 			}
-			if( $current && $current->menu_item_parent ) {
-				if( $this->menu[ $current->menu_item_parent ]->menu_item_parent ) { // Third Level
+			if ( $current && $current->menu_item_parent ) {
+				if ( $this->menu[ $current->menu_item_parent ]->menu_item_parent ) { // Third Level
 					$current = $this->menu[ $current->menu_item_parent ];
-				} 
-				foreach( $this->menu as $menu_id => $menu ) {
-					if( $current->ID == $menu->ID && 'custom' != $menu->type ) {
+				}
+				foreach ( $this->menu as $menu_id => $menu ) {
+					if ( $current->ID == $menu->ID && 'custom' != $menu->type ) {
 						$menu->title = 'Overview';
 						$nav[] = $menu;
-					} else if( $current->ID == $menu->menu_item_parent ) {
-						$nav[] = $menu;  
+					} else if ( $current->ID == $menu->menu_item_parent ) {
+						$nav[] = $menu;
 					}
 				}
 			}
@@ -215,11 +215,11 @@ class cf_theme_model {
 
 class cf_theme_controller {
 	private $ct_theme_model;
-	
+
 	public function __construct( $cf_theme_model ) {
 		$this->cf_theme_model = $cf_theme_model;
 	}
-	
+
 	public function set_tertiary( $post_id ) {
 		$this->cf_theme_model->set_tertiary_nav( $post_id );
 	}
@@ -228,12 +228,12 @@ class cf_theme_controller {
 class cf_theme_view {
 	private $cf_theme_model;
 	private $cf_theme_controller;
-	
+
 	public function __construct( $cf_theme_controller, $cf_theme_model ) {
 		$this->cf_theme_model = $cf_theme_model;
 		$this->cf_theme_controller = $cf_theme_controller;
 	}
-	
+
 	public function add_custom_settings( $wp_customize ) {
 		$wp_customize->add_setting( 'cahnrs_flex_subtheme', array(
 			'default'     => 'default',
@@ -252,7 +252,7 @@ class cf_theme_view {
 			'priority'   => 99,
 			) );
 		$wp_customize->add_control(
-			'cahnrs_flex_theme_control', 
+			'cahnrs_flex_theme_control',
 			array(
 				'label'    => __( 'Site Sub-Theme' ),
 				'section'  => 'cahnrs_flex_theme',
@@ -266,7 +266,7 @@ class cf_theme_view {
 			)
 		);
 		$wp_customize->add_control(
-			'cahnrs_flex_featured_control', 
+			'cahnrs_flex_featured_control',
 			array(
 				'label'    => __( 'Display Featured Image Banner' ),
 				'section'  => 'cahnrs_flex_theme',
@@ -275,7 +275,7 @@ class cf_theme_view {
 			)
 		);
 		$wp_customize->add_control(
-			'cahnrs_flex_exclude_feature_control', 
+			'cahnrs_flex_exclude_feature_control',
 			array(
 				'label'    => __( 'Exclude Front Page: Image Banner' ),
 				'section'  => 'cahnrs_flex_theme',

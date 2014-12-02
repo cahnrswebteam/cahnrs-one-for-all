@@ -1,7 +1,6 @@
 #global-header.main-header {
-	height: auto ;
+	height: auto;
 }
-
 #global-header:before,
 #global-header:after {
 	background: #5e6a71;

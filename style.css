@@ -3,7 +3,7 @@ Theme Name:  WSU Spine - CAHNRS Flex
 Theme URI:   http://cahnrs.wsu.edu/communications/
 Author:      CAHNRS Communications, Danial Bleile, Phil Cable
 Author URI:  http://cahnrs.wsu.edu/communications/
-Description: 
+Description:
 Version:     0.1
 License:     Copyright Washington State University
 License      URI: http://copyright.wsu.edu
@@ -19,8 +19,10 @@ Template:    WSUWP-spine-parent-theme
 	height: 100%;
 	top: 0;
 }
-#global-header:after { left: auto; right: -100%; }
-
+#global-header:after {
+	left: auto;
+	right: -100%;
+}
 #global-header > nav > ul {
 	margin: 0;
 	padding: 0;
@@ -36,7 +38,6 @@ Template:    WSUWP-spine-parent-theme
 #global-header .is_dropdown li {
 	position: relative;
 }
-
 #global-header .is_dropdown ul {
 	margin: 0;
 	padding: 0;
@@ -44,22 +45,18 @@ Template:    WSUWP-spine-parent-theme
 	top: 100%;
 	display: none;
 }
-
 #global-header .is_dropdown li li {
 	display: block;
 	margin: 0;
 	padding: 0;
 }
-
 #global-header .is_dropdown li li a {
 	display: block;
 	margin: 0;
 }
-
 main > section {
 	margin: 0 2rem;
 }
 main > section > article{
 	padding: 1.25rem 0 3rem;
 }
-

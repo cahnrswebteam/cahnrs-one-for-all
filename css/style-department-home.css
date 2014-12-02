@@ -56,9 +56,6 @@
 	background-position: center center;
 	background-size: cover;
 }
-.size-gt-medium #post-image-wrapper.toolbar {
-	top: 32px;
-}
 #post-featured-image img {
 	width: 100%;
 	height: auto;
@@ -112,7 +109,7 @@
 	font-weight: bold;
 	margin: 0.5rem;
 	padding: 0.5rem;
-	text-transform: uppercase; 
+	text-transform: uppercase;
 	-webkit-transition: background-color .2s linear, color .2s linear;
 	-moz-transition:    background-color .2s linear, color .2s linear;
 	-o-transition:      background-color .2s linear, color .2s linear;
@@ -219,7 +216,7 @@ main > section > article {
 	.pagbuilder-layout-half .pagebuilder-column-2 .pagebuilder-item,
 	.pagbuilder-layout-thirds div:not(.pagebuilder-column-1) .pagebuilder-item,
 	.pagbuilder-layout-fourths div:not(.pagebuilder-column-1) .pagebuilder-item,
-	.pagebuilder-item:not(.widget_page_title) { 
+	.pagebuilder-item:not(.widget_page_title) {
 		margin: 1px;
 	}
 	.widget_page_content .item-inner-wrapper,

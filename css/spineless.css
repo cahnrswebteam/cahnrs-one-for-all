@@ -67,7 +67,7 @@
 		max-width: 1782px;
 	}
 }
-	
+
 @media only screen and (min-width:1980px) {
 	.spineless #binder:not(.fluid).max-1980,
 	.spineless #binder:not(.fluid).max-1980 main {
