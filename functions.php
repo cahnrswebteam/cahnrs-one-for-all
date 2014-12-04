@@ -8,7 +8,7 @@ class init_cahnrs_flex {
 		$this->theme_model = new cf_theme_model();
 		$this->theme_controller = new cf_theme_controller( $this->theme_model );
 		$this->theme_view = new cf_theme_view( $this->theme_controller, $this->theme_model );
-		\add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
+		\add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ), 11 );
 		\add_action( 'customize_register', array( $this->theme_view, 'add_custom_settings' ) );
 		\add_action( 'init', array( $this, 'add_menu_locations' ) );
 		\add_action( 'init', array( $this, 'add_image_sizes' ) );
@@ -28,10 +28,11 @@ class init_cahnrs_flex {
 		\wp_enqueue_script(
 			'cahnrs-flex-js',
 			get_stylesheet_directory_uri().'/js/flex.js',
-			array(),
+			array( 'jquery' ),
 			'0.0.1'
 			);
 		if ( 'department' == $this->theme_model->t_css ) {
+			wp_dequeue_style( 'spine-theme-extra' );
 			if ( is_front_page() ) {
 				wp_enqueue_style(
 					'cahnrs-department-home',
@@ -45,8 +46,6 @@ class init_cahnrs_flex {
 				}
 			}
 		}
-		//include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		//if ( is_plugin_active( 'all-in-one-event-calendar/all-in-one-event-calendar.php' ) ) {
 		$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
 		if ( in_array( 'all-in-one-event-calendar/all-in-one-event-calendar.php', $active_plugins ) ) {
   		wp_enqueue_style(
