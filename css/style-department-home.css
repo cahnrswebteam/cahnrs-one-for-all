@@ -167,7 +167,7 @@ main > section > article {
 .article-header {
 	display: none;
 }
-.has-featured-image .size-gt-medium #spine:not(.crimson) #glue:before {
+.has-featured-image .size-gt-medium #spine:not(.crimson):not(.skimmed) #glue:before {
 	opacity: 0.9;
 }
 
