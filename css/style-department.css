@@ -16,22 +16,22 @@
 #global-header.colors-green,
 #global-header.colors-green:before,
 #global-header.colors-green:after {
-	background: #8f7e35;
+	background-color: #8f7e35;
 }
 #global-header.colors-orange,
 #global-header.colors-orange:before,
 #global-header.colors-orange:after {
-	background: #b67233;
+	background-color: #b67233;
 }
 #global-header.colors-blue,
 #global-header.colors-blue:before,
 #global-header.colors-blue:after {
-	background: #4f868e;
+	background-color: #4f868e;
 }
 #global-header.colors-yellow,
 #global-header.colors-yellow:before,
 #global-header.colors-yellow:after {
-	background: #c69214;
+	background-color: #c69214;
 }
 #site-heading {
 	padding: 1rem 2rem;
@@ -44,18 +44,15 @@
 	line-height: 1rem;
 	text-transform: uppercase;
 }
-#network-title {
+.organization {
+	border-right: 1px solid #fff;
 	display: inline-block;
 	font-weight: bold;
-}
-#network-title span {
-	display: none;
+	margin-right: 1rem;
+	padding-right: 1rem;
 }
 #site-title {
-	border-left: 1px solid #fff;
 	display: inline-block;
-	margin-left: 0.75rem;
-	padding-left: 1rem;
 }
 
 /**
@@ -84,14 +81,93 @@ main section aside:last-of-type {
  * Media Queries
  * -----------------------
  */
+@media only screen and (min-width: 693px) {
+	.organization > a,
+	.organization div {
+		-webkit-transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+		-moz-transition:    max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+		-o-transition:      max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+		transition:         max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+	}
+	.organization div {
+		display: block;
+		margin-left: -1rem;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		padding: 1rem 1rem 0;
+		position: absolute;
+		visibility: hidden;
+		white-space: nowrap;
+		z-index: 2;
+	}
+	.colors-gray .organization div  {
+		background-color: rgba( 94, 106, 113, 0.98 );
+	}
+	.colors-green.organization div {
+		background-color: rgba( 143, 126, 53, 0.98 );
+	}
+	.colors-orange.organization div {
+		background-color: rgba( 182, 114, 51, 0.98 );
+	}
+	.colors-blue.organization div {
+		background-color: rgba( 79, 134, 142, 0.98 );
+	}
+	.colors-yellow.organization div {
+		background-color: rgba( 198, 146, 20, 0.98 );
+	}
+	.organization:hover > a {
+		opacity: 0.1;
+	}
+	.organization:hover div {
+		max-height: 200px; /* Arbitrary, increase if needed. */
+		opacity: 1;
+		visibility: visible;
+	}
+	.organization div > a {
+		display: block;
+		float: left;
+		padding-top: 10px;
+	}
+	.cahnrs div > a {
+		float: none;
+	}
+	.organization div ul {
+		float:left;
+		padding: 0.25rem 0 0.5rem 1rem;
+	}
+	.cahnrs div ul {
+		float: none;
+		padding-left: 5rem;
+	}
+	.organization div li {
+		list-style: none;
+		margin-top: 0.5em;
+		padding: 0;
+	}
+	.organization div li a {
+		display: inline-block;
+		font-weight: normal;
+		padding-left: 1rem;
+	}
+	.organization div li:hover a {
+		border-left: 1px solid #fff;
+		font-weight: bold;
+	}
+	.cahnrs div li:hover a {
+		margin-left: -1px;
+	}
+}
 @media only screen and (max-width: 693px) {
-	#network-title {
+	.organization {
 		display: block;
 	}
-	#site-title {
-		border-left: none;
-		display: block;
+	.organization a {
+		border-right: none;
 		margin-left: 0;
 		padding-left: 0;
+	}
+	.organization div {
+		display: none;
 	}
 }

@@ -1,8 +1,34 @@
-<?php global $cahnrs_flex; ?>
+<?php
+global $cahnrs_flex;
+$opts = get_theme_mod( 'cahnrs_flex_subtheme' );
+?>
 <header id="global-header" class="main-header colors-<?php echo esc_attr( spine_get_option( 'secondary_colors' ) ); ?>">
 	<div id="site-heading">
-		<span id="network-title"><a href="http://cahnrs.wsu.edu">CAHNRS</a><?php if ( is_front_page() ) : ?><span><a href="http://cahnrs.wsu.edu">College of Agricultural, Human, and Natural Resource Sciences</a></span><?php endif; ?></span>
-		<span id="site-title"><?php echo get_bloginfo( 'name' ); ?></span>
+		<div class="organization cahnrs colors-<?php echo esc_attr( spine_get_option( 'secondary_colors' ) ); ?>">
+    	<a href="http://cahnrs.wsu.edu">CAHNRS</a>
+			<div>
+				<a href="http://cahnrs.wsu.edu">College of Agricultural, Human, and Natural Resource Sciences</a>
+				<ul>
+					<li><a href="http://cahnrs.wsu.edu/academics/">Students</a></li>
+					<li><a href="http://cahnrs.wsu.edu/research/">Research</a></li>
+					<li><a href="http://cahnrs.wsu.edu/extension/">Extension</a></li>
+					<li><a href="http://cahnrs.wsu.edu/alumni/">Alumni and Friends</a></li>
+					<li><a href="http://cahnrs.wsu.edu/fs/">Faculty and Staff</a></li>
+				</ul>
+			</div>
+		</div><?php if ( 'extension' == $opts ) : ?><div class="organization">
+    	<a href="http://ext.wsu.edu">Extension</a>
+			<div>
+				<a href="http://ext.wsu.edu">Extension</a>
+				<ul>
+					<li><a href="http://extension.wsu.edu/">Placeholder</a></li>
+					<li><a href="http://extension.wsu.edu/">Placeholder</a></li>
+					<li><a href="http://extension.wsu.edu/">Placeholder</a></li>
+					<li><a href="http://extension.wsu.edu/">Placeholder</a></li>
+					<li><a href="http://extension.wsu.edu/">Placeholder</a></li>
+				</ul>
+      </div>
+		</div><?php endif; ?><a id="site-title" href="<?php echo home_url( '/' ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 	</div>
 	<?php if ( true == spine_get_option( 'crop' ) && is_front_page() ) : ?>
 	<nav>

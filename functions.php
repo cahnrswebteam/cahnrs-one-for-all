@@ -172,6 +172,9 @@ class cf_theme_model {
 			case 'department':
 				$opts = array( 'header' => 'department', 'footer' => false, 'css' => 'department' );
 				break;
+			case 'extension':
+				$opts = array( 'header' => 'department', 'footer' => false, 'css' => 'department' );
+				break;
 			case 'default':
 			default:
 				$opts = array( 'header' => 'default', 'footer' => false, 'css' => 'default' );
@@ -258,9 +261,10 @@ class cf_theme_view {
 				'settings' => 'cahnrs_flex_subtheme',
 				'type'     => 'select',
 				'choices'  => array(
-					'default'  => 'Standard',
+					'default'    => 'Standard',
 					'department' => 'Department',
-					'sdc' => 'SDC'
+					'extension'  => 'Extension Unit',
+					'sdc'        => 'SDC',
 				),
 			)
 		);
