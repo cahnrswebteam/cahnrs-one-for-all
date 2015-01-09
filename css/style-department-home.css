@@ -181,8 +181,10 @@ main > section > article {
 	}
 }
 @media only screen and (min-width: 693px) {
-	.organization div {
+	.has-featured-image .organization div {
 		background: none !important;
+	}
+	.organization div {
 		padding: 0 1rem;
 	}
 	/* Pagebuilder overrides */

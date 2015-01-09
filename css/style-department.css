@@ -45,9 +45,11 @@
 	text-transform: uppercase;
 }
 .organization {
-	border-right: 1px solid #fff;
 	display: inline-block;
 	font-weight: bold;
+}
+.organization > a {
+	border-right: 1px solid #fff;
 	margin-right: 1rem;
 	padding-right: 1rem;
 }
@@ -83,6 +85,18 @@ main section aside:last-of-type {
  */
 @media only screen and (min-width: 693px) {
 	.organization > a,
+	.organization + .organization a,
+	.organization ~ a {
+		-webkit-transition: opacity 0.8s ease-in-out;
+		-moz-transition:    opacity 0.8s ease-in-out;
+		-o-transition:      opacity 0.8s ease-in-out;
+		transition:         opacity 0.8s ease-in-out;
+	}
+	.organization:hover > a,
+	.organization:hover + .organization a,
+	.organization:hover ~ a {
+		opacity: 0.1;
+	}
 	.organization div {
 		-webkit-transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
 		-moz-transition:    max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
@@ -116,9 +130,6 @@ main section aside:last-of-type {
 	.colors-yellow.organization div {
 		background-color: rgba( 198, 146, 20, 0.98 );
 	}
-	.organization:hover > a {
-		opacity: 0.1;
-	}
 	.organization:hover div {
 		max-height: 200px; /* Arbitrary, increase if needed. */
 		opacity: 1;
@@ -150,11 +161,14 @@ main section aside:last-of-type {
 		font-weight: normal;
 		padding-left: 1rem;
 	}
-	.organization div li:hover a {
+	.organization div li:hover {
 		border-left: 1px solid #fff;
-		font-weight: bold;
 	}
-	.cahnrs div li:hover a {
+	.cahnrs div li:hover {
+		margin-left: -1px;
+	}
+	.organization div li:hover a {
+		font-weight: bold;
 		margin-left: -1px;
 	}
 }
