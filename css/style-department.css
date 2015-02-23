@@ -36,8 +36,7 @@
 #site-heading {
 	padding: 1rem 2rem;
 }
-#site-heading {
-	color: #fff;
+#site-heading a {
 	font-family: 'Open Sans', 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	font-size: 0.75rem;
 	letter-spacing: 2px;
@@ -46,7 +45,6 @@
 }
 .organization {
 	display: inline-block;
-	font-weight: bold;
 }
 .organization > a {
 	border-right: 1px solid #fff;
@@ -55,6 +53,61 @@
 }
 #site-title {
 	display: inline-block;
+	font-weight: bold;
+}
+
+/**
+ * Additional navigation
+ * -----------------------
+ */
+#cahnrs-additional-navigation {
+	font-size: 12px;
+	padding: 0 1rem 0 2rem;
+	position: relative;
+	text-align: right;
+}
+#cahnrs-additional-navigation:after {
+	content: '';
+	height: 100%;
+	position: absolute;
+	right: -9999rem;
+	top: 0;
+	width: 9999rem;
+	z-index: 1;
+}
+.colors-gray #cahnrs-additional-navigation,
+.colors-gray #cahnrs-additional-navigation:after,
+.colors-gray #cahnrs-additional-navigation li > ul {
+	background: #23282b;
+}
+#cahnrs-additional-navigation ul li {
+	line-height: 1.1em;
+	text-align: left;
+}
+#cahnrs-additional-navigation a {
+	color: #d7dadb;
+	padding: 7px 0;
+}
+#cahnrs-additional-navigation > ul > li > a {
+	min-width: 156px;
+	padding: 7px 1.75em;
+}
+#cahnrs-additional-navigation a:hover {
+	color: #fff;
+}
+#global-header #cahnrs-additional-navigation .is_dropdown > li > ul {
+	z-index: 2;
+	padding: 0 1.75em 7px;
+	width: 156px;
+}
+#cahnrs-additional-navigation .sub-menu ul {
+	position: relative;
+}
+#cahnrs-additional-navigation .sub-menu li:hover ul {
+	display: block;
+}
+#cahnrs-additional-navigation .is_dropdown li ul li {
+	margin-left:1.25em;
 }
 
 /**
@@ -77,6 +130,10 @@ main section aside {
 }
 main section aside:last-of-type {
 	padding-bottom: 1em;
+}
+.widget_cahnrs_action_item a {
+	font-size: .9em;
+	padding: 0 1.5em;
 }
 
 /**
@@ -118,16 +175,16 @@ main section aside:last-of-type {
 	.colors-gray .organization div  {
 		background-color: rgba( 94, 106, 113, 0.98 );
 	}
-	.colors-green.organization div {
+	.colors-green .organization div {
 		background-color: rgba( 143, 126, 53, 0.98 );
 	}
-	.colors-orange.organization div {
+	.colors-orange .organization div {
 		background-color: rgba( 182, 114, 51, 0.98 );
 	}
-	.colors-blue.organization div {
+	.colors-blue .organization div {
 		background-color: rgba( 79, 134, 142, 0.98 );
 	}
-	.colors-yellow.organization div {
+	.colors-yellow .organization div {
 		background-color: rgba( 198, 146, 20, 0.98 );
 	}
 	.organization:hover div {
@@ -138,20 +195,21 @@ main section aside:last-of-type {
 	.organization div > a {
 		display: block;
 		float: left;
-		padding-top: 10px;
+		padding-top: 0.75rem;
 	}
 	.cahnrs div > a {
 		float: none;
 	}
 	.organization div ul {
-		float:left;
+		float: left;
 		padding: 0.25rem 0 0.5rem 1rem;
 	}
 	.cahnrs div ul {
 		float: none;
-		padding-left: 5rem;
+		padding-left: 5rem; padding-left: 77px;
 	}
 	.organization div li {
+		line-height: 1rem;
 		list-style: none;
 		margin-top: 0.5em;
 		padding: 0;
@@ -171,6 +229,18 @@ main section aside:last-of-type {
 		font-weight: bold;
 		margin-left: -1px;
 	}
+	
+	.cahnrs {
+		position: relative;
+	}
+	.cahnrs div {
+		width: 590%;
+	}
+	.cahnrs div ul {
+		margin-left: -1rem;
+		padding-left: 17%;
+	}
+	
 }
 @media only screen and (max-width: 693px) {
 	.organization {

@@ -62,9 +62,9 @@ class init_cahnrs_flex {
 	}
 
 	public function add_menu_locations() {
-		if ( 'department' != $this->theme_model->t_css ) {
+		//if ( 'department' != $this->theme_model->t_css ) {
 			register_nav_menu( 'cahnrs_horizontal', 'Horizontal' );
-		}
+		//}
 	}
 
 	public function add_image_sizes() {
@@ -122,7 +122,7 @@ class init_cahnrs_flex {
 	}
 
 	public function check_post_thumbnail() {
-		if ( !$this->theme_model->show_home_banner && is_front_page() ) return false;
+		if ( $this->theme_model->show_home_banner && is_front_page() ) return false;
 		if ( $this->theme_model->show_banner && has_post_thumbnail() ) return true;
 		return false;
 	}
@@ -146,6 +146,9 @@ class init_cahnrs_flex {
 	public function spine_theme_images_classes( $classes ) {
 		if ( has_post_thumbnail() && is_singular() ) {
 			$classes[] = 'has-featured-image';
+		}
+		if ( 'extension' == get_theme_mod( 'cahnrs_flex_subtheme' ) ) {
+			$classes[] = 'extension-signature';
 		}
 		return $classes;
 	}
