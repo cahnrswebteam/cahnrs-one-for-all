@@ -118,6 +118,7 @@ class init_cahnrs_flex {
 			'query_var'         => true,
 			'rewrite'           => array( 'slug' => 'sites' ),
 		);
+		
 		register_taxonomy( 'site', array( 'page' ), $args );
 	}
 
@@ -178,6 +179,9 @@ class cf_theme_model {
 			case 'extension':
 				$opts = array( 'header' => 'department', 'footer' => false, 'css' => 'department' );
 				break;
+			case 'unit':
+				$opts = array( 'header' => 'department', 'footer' => false, 'css' => 'unit' );
+				break;
 			case 'default':
 			default:
 				$opts = array( 'header' => 'default', 'footer' => false, 'css' => 'default' );
@@ -185,7 +189,10 @@ class cf_theme_model {
 		$this->t_header = $opts['header'];
 		$this->t_footer = $opts['footer'];
 		$this->t_css = $opts['css'];
+		
+		
 		$this->show_banner = get_theme_mod( 'cahnrs_flex_featured', false ); // Get the options from theme
+		
 		$this->show_home_banner = get_theme_mod( 'cahnrs_flex_ex_feature', false ); // Get the options from theme
 	}
 
@@ -245,7 +252,7 @@ class cf_theme_view {
 			'transport'   => 'refresh',
 		) );
 		$wp_customize->add_setting( 'cahnrs_flex_featured', array(
-			'default'     => '1',
+			'default'     => '',
 			'transport'   => 'refresh',
 		) );
 		$wp_customize->add_setting( 'cahnrs_flex_ex_feature', array(
@@ -267,6 +274,7 @@ class cf_theme_view {
 					'default'    => 'Standard',
 					'department' => 'Department',
 					'extension'  => 'Extension Unit',
+					'unit'       => 'Unit',
 					'sdc'        => 'SDC',
 				),
 			)
