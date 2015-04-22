@@ -5,6 +5,7 @@
 #global-header {
 	height: auto;
 	width: 100%;
+	z-index: 2;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
