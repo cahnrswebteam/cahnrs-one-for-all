@@ -125,13 +125,18 @@
 	width: 100%;
 	overflow: hidden;
 	left: 0;
-	background-position: center center;
+	background-position: center center; 
 	background-size: cover;
 }
 #post-featured-image img{
 	width: 100%;
 	height: auto;
 }
+
+.home #post-featured-image {
+	height: 0 !important;
+}
+
 main > section {
 	background: #fff;
 	margin: 0 !important;

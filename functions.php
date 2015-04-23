@@ -31,7 +31,7 @@ class init_cahnrs_flex {
 			array( 'jquery' ),
 			'0.0.1'
 			);
-		if ( 'department' == $this->theme_model->t_css ) {
+		if ( 'department' == $this->theme_model->t_css || 'unit' == $this->theme_model->t_css ) {
 			wp_dequeue_style( 'spine-theme-extra' );
 			if ( is_front_page() ) {
 				wp_enqueue_style(
