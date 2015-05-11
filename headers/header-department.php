@@ -31,7 +31,7 @@ $opts = get_theme_mod( 'cahnrs_flex_subtheme' );
 		</div><?php endif; ?><a id="site-title" href="<?php echo home_url( '/' ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 	</div>
   <?php if ( has_nav_menu( 'cahnrs_horizontal' ) ) : ?>
-	<nav id="cahnrs-additional-navigation">
+	<nav id="cahnrs-additional-navigation" class="<?php echo esc_attr( spine_get_option( 'spine_color' ) ); ?>">
 	<?php
 		$horizontal_nav_args = array(
 			'theme_location' => 'cahnrs_horizontal',
